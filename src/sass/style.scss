@@ -1,0 +1,33 @@
+body{
+    background-color: #8DA9C4;
+}
+.containerBg{
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: #fdfdfd;
+    padding-bottom: 15px;
+}
+
+.cateFilt{
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .containerBg{
+        border-radius: 10px;
+        margin: 0 auto;
+        background-color: #fdfdfd;
+        padding-bottom: 15px;
+    }
+    .custom-table{
+      max-width: 10px; 
+      white-space: nowrap; 
+      overflow: hidden; 
+      text-overflow: ellipsis; 
+    }
+    .custom-select{
+        width: 80%;
+    }
+  }
+
+  

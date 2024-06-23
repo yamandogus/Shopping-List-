@@ -140,6 +140,7 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
       </Form.Group>
       <FormLabel>Market seçiniz:</FormLabel>
       <Form.Select
+      className='custom-select'
       value={shopsName}
       onChange={(e)=>{setShopsName(e.target.value)}}
        aria-label="Floating label select example">
@@ -147,8 +148,9 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
         return  <option key={shop.id} value={shop.id}>{shop.name}</option>
         })}
       </Form.Select>
-      <FormLabel>Kategori seçiniz:</FormLabel>
+      <FormLabel className='cateFilt'>Kategori seçiniz:</FormLabel>
       <Form.Select
+      className='custom-select'
       value={categoryName}
       onChange={(e)=>{setCategoryName(e.target.value)}}
        aria-label="Floating label select example">
@@ -202,6 +204,7 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
        <br />
       <FormLabel>Market Filtrele:</FormLabel>
       <Form.Select
+      className='custom-select'
       value={filteredShopId}
       onChange={(e)=>{setFilteredShopId(e.target.value)}}
        aria-label="Floating label select example">
@@ -210,19 +213,20 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
         return  <option key={shop.id} value={shop.id}>{shop.name}</option>
         })}
       </Form.Select>
-      <FormLabel>Kategori Filtrele:</FormLabel>
+      <FormLabel className='cateFilt'>Kategori Filtrele:</FormLabel>
       <Form.Select
+      className='custom-select'
       value={filteredCategoryId}
       onChange={(e)=>{setFilteredCategoryId(e.target.value)}}
        aria-label="Floating label select example">
-        <option></option>
+        <option ></option>
         {categories.map((category)=>{
         return  <option key={category.id} value={category.id}>{category.name}</option>
         })}
       </Form.Select>
     </Form>
 
-    <Table className='mt-5' striped bordered hover>
+    <Table className='mt-5 tableTT' striped bordered hover>
       <thead>
         <tr>
           <th>Product Code-ID</th>
@@ -238,7 +242,7 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
             className={product.isBought ? "is-bought": ""}
             onClick={() => handlePruductTrClick(product.id)}
             key={product.id}>
-            <td>{product.id}</td>
+            <td className='custom-table'>{product.id}</td>
             <td>{product.name}</td>
             <td>{shops.find(shop=>shop.id==product.shop).name}</td>
             <td>{categories.find(category=>category.id == product.category).name}</td>
