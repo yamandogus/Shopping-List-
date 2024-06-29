@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
 import { Button, Container, Form, FormLabel, Table } from 'react-bootstrap';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
@@ -207,7 +206,9 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
       className='custom-select'
       value={filteredShopId}
       onChange={(e)=>{setFilteredShopId(e.target.value)}}
-       aria-label="Floating label select example">
+       aria-label="Floating label select example"
+       required
+       >
        <option></option>
         {shops.map((shop) => {
         return  <option key={shop.id} value={shop.id}>{shop.name}</option>
@@ -218,8 +219,10 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
       className='custom-select'
       value={filteredCategoryId}
       onChange={(e)=>{setFilteredCategoryId(e.target.value)}}
-       aria-label="Floating label select example">
-        <option ></option>
+       aria-label="Floating label select example"
+       required
+       >
+        <option></option>
         {categories.map((category)=>{
         return  <option key={category.id} value={category.id}>{category.name}</option>
         })}
@@ -229,11 +232,11 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
     <Table className='mt-5 tableTT' striped bordered hover>
       <thead>
         <tr>
-          <th>Product Code-ID</th>
-          <th>Name</th>
-          <th>Shop</th>
-          <th>Category</th>
-          <th>Delete</th>
+        <th>Ürün Kodu-ID</th>
+          <th>Ürün İsmi</th>
+          <th>Market</th>
+          <th>Kategori</th>
+          <th>Sil</th>
         </tr>
       </thead>
       <tbody>
@@ -244,9 +247,13 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
             key={product.id}>
             <td className='custom-table'>{product.id}</td>
             <td>{product.name}</td>
-            <td>{shops.find(shop=>shop.id==product.shop).name}</td>
-            <td>{categories.find(category=>category.id == product.category).name}</td>
-            <td width={25} className='text-center'><IconButton
+            <td>
+                {shops.find(shop => shop.id == product.shop)?.name}
+              </td>
+              <td>
+                {categories.find(category => category.id == product.category)?.name}
+              </td>
+              <td width={25} className='text-center'><IconButton
               deleteClick={()=>{
                 setProducts(products.filter((productFilter=>
                   productFilter.id !== product.id

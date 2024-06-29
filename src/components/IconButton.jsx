@@ -6,6 +6,9 @@ const ButtonIcons=styled.button`
 cursor: pointer;
 border: none;
 background: transparent;
+&:hover{
+  color: red;
+}
 `
 const IconButton = ({deleteClick}) => {
   return (
