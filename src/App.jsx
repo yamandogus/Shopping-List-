@@ -75,6 +75,8 @@ function App() {
  }
  setProducts([...products, newProduct])
  setProductName("")
+ setShopsName("")
+ setCategoryName("")
  }
 
  const handlePruductTrClick = (id) => {
@@ -142,7 +144,10 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
       className='custom-select'
       value={shopsName}
       onChange={(e)=>{setShopsName(e.target.value)}}
-       aria-label="Floating label select example">
+       aria-label="Floating label select example"
+       required
+       >
+       <option value="" disabled>Bir market seçiniz</option>
         {shops.map((shop) => {
         return  <option key={shop.id} value={shop.id}>{shop.name}</option>
         })}
@@ -152,9 +157,13 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
       className='custom-select'
       value={categoryName}
       onChange={(e)=>{setCategoryName(e.target.value)}}
-       aria-label="Floating label select example">
+       aria-label="Floating label select example"
+       required
+
+       >
+       <option value="" disabled>Bir kategori seçiniz</option>
         {categories.map((category)=>{
-        return  <option key={category.id} value={category.id}>{category.name}</option>
+            return  <option key={category.id} value={category.id}>{category.name}</option>
         })}
       </Form.Select>
       <div className='text-center mt-3 mb-2'>
@@ -248,10 +257,10 @@ if(filteredCategoryId !== "" && product.category !== filteredCategoryId){
             <td className='custom-table'>{product.id}</td>
             <td>{product.name}</td>
             <td>
-                {shops.find(shop => shop.id == product.shop)?.name}
+                {shops.find(shop => shop.id == product.shop)?.name || "Bilinmeyen Market"}
               </td>
               <td>
-                {categories.find(category => category.id == product.category)?.name}
+                {categories.find(category => category.id == product.category)?.name || "Bilinmeyen kategori"}
               </td>
               <td width={25} className='text-center'><IconButton
               deleteClick={()=>{
