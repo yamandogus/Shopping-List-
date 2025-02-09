@@ -1,0 +1,107 @@
+.app-background {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-title {
+  color: #2c3e50;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-container, .filters-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.modern-input, .modern-select {
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.modern-input:focus, .modern-select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52,152,219,0.2);
+}
+
+.btn-primary {
+  background: #3498db;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.modern-table {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.table-header {
+  background: #3498db;
+  color: white;
+}
+
+.modern-table thead th {
+  border: none;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.modern-table tbody td {
+  padding: 12px;
+  border-color: #e2e8f0;
+  vertical-align: middle;
+}
+
+.is-bought {
+  background-color: #e8f5e9 !important;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+tr:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.form-check {
+  margin-right: 1rem;
+}
+
+.form-check-input:checked {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.custom-table {
+  font-family: monospace;
+  color: #666;
+} 
